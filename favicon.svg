@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Fond sombre -->
+  <rect width="64" height="64" fill="#1B3A5C" rx="6"/>
+  <!-- Ligne décorative or en haut -->
+  <rect x="8" y="8" width="48" height="2" fill="#C9A84C" rx="1"/>
+  <!-- Ligne décorative or en bas -->
+  <rect x="8" y="54" width="48" height="2" fill="#C9A84C" rx="1"/>
+  <!-- Lettres CAC centrées -->
+  <text
+    x="32"
+    y="40"
+    font-family="Georgia, serif"
+    font-size="22"
+    font-weight="bold"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    letter-spacing="2"
+  >CAC</text>
+</svg>
