@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio CAC Consulting — Projets résidentiels, commerciaux et institutionnels au Sénégal.">
+  <title>CAC Consulting — Projets</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style (2).css">
+</head>
+
+<body class="page-projets">
+
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader-logo">CAC</div>
+    <div class="loader-bar"><span></span></div>
+  </div>
+
+  <div id="parallax-bg" aria-hidden="true"></div>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index (1).html" class="logo-container" aria-label="CAC Consulting — Accueil">
+      <img src="logoCAC2018SANSADRESSE.jpg" alt="Logo CAC Consulting" class="logo">
+    </a>
+
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="index (1).html">Accueil</a></li>
+        <li><a href="projets (2).html">Projets</a></li>
+        <li><a href="services (1).html">Services</a></li>
+        <li><a href="contact (1).html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="accueil" class="hero hero-compact">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Portfolio · Réalisations</p>
+      <h1 class="hero-title">Nos <em>Projets</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-text">
+        Une sélection de nos réalisations dans les domaines résidentiel, commercial et institutionnel.
+      </p>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Défiler</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- FILTRES -->
+  <div class="filters-wrapper fade-in">
+    <div class="filters" role="tablist" aria-label="Filtrer par catégorie">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="residentiel">Résidentiel</button>
+      <button class="filter-btn" data-filter="commercial">Commercial &amp; Bureaux</button>
+      <button class="filter-btn" data-filter="institutionnel">Institutionnel</button>
+      <button class="filter-btn" data-filter="loisirs">Loisirs &amp; Hôtellerie</button>
+      <button class="filter-btn" data-filter="industriel">Industriel</button>
+    </div>
+  </div>
+
+  <!-- PROJETS -->
+  <div class="section-wrapper fade-in">
+    <div class="section-box section-box-wide">
+      <span class="section-label">Portfolio</span>
+      <h2 class="section-title">Nos réalisations</h2>
+
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- PROJET 1 -->
+        <article class="project-card" data-category="residentiel"
+          data-title="Immeuble résidentiel"
+          data-location="Dakar · Senegal"
+          data-year="2018"
+          data-description="Immeuble Residentiel Sacré Coeur"
+          data-images='[
+            "images/IMMEUBLE DE RESIDENCES A SACRE COEUR CHEIKH MBACKE copie.jpg",
+            "images/IMG_2926.JPG",
+            "c:\Users\HP\Desktop\SITE WEB CAC\IMG_3078.jpg"
+          ]'>
+          <div class="project-media">
+            <img src="c:\Users\HP\Desktop\SITE WEB CAC\IMG_3070.jpg" alt="Immeuble résidentiel à Sacré Coeur" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>Résidentiel</span><span>2018</span></div>
+            <h3>Immeuble résidentiel à Sacré Coeur</h3>
+            <p class="project-loc">Dakar · Sénégal</p>
+            <div class="project-cta">Voir la galerie</div>
+          </div>
+        </article>
+
+        <!-- PROJET 2 -->
+        <article class="project-card" data-category="residentiel"
+          data-title="Villa Bel Air"
+          data-location="Dakar · Senegal"
+          data-year="2015"
+          data-description="Villa à Bel Air"
+          data-images='[
+            "images/VUE 5.jpg",
+            "images/03.jpg",
+            "images/05.jpg",
+            "images/04.jpg"
+          ]'>
+          <div class="project-media">
+            <img src="images/projet-02-1.jpg" alt="Villa à Bel Air" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>Residentiel</span><span>2025</span></div>
+            <h3>Villa à Bel Air</h3>
+            <p class="project-loc">Dakar · Sénégal</p>
+            <div class="project-cta">Voir la galerie</div>
+          </div>
+        </article>
+
+        <!-- PROJET 3 -->
+        <article class="project-card" data-category="residentiel"
+          data-title="Immeuble Al Makhtoum"
+          data-location="Dakar · Senegal"
+          data-year="2025"
+          data-description="Immeuble Al Makhtoum"
+          data-images='[
+            "images/Diapositive1.JPG",
+            "images/FACADE-PRINCIPALE--BATIMENT--B.jpg",
+            "images/FACADE-PRINCIPALE-BAT-A.jpg"
+          ]'>
+          <div class="project-media">
+            <img src="images/projet-03-1.jpg" alt="Immeuble Al Makhtoum" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>Institutionnel</span><span>2018</span></div>
+            <h3>Immeuble Al Makhtoum</h3>
+            <p class="project-loc">Dakar · Sénégal</p>
+            <div class="project-cta">Voir la galerie</div>
+          </div>
+        </article>
+
+        <!-- PROJET 4 -->
+        <article class="project-card" data-category="residentiel"
+          data-title="Villa Almadies"
+          data-location="Ville · Pays"
+          data-year="2012"
+          data-description="Villa aux Almadies"
+          data-images='[
+            "images/VILLA AUX aLAMDIES CONSTRUITE DEPUIS 2012.jpg",
+            "images/FRESQUE MURALE DANS LE HALL.jpg"
+          ]'>
+          <div class="project-media">
+            <img src="images/projet-04-1.jpg" alt="Villa aux Almadies" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>Loisirs</span><span>2012</span></div>
+            <h3>Villa aux Almadies</h3>
+            <p class="project-loc">Dakar · Sénégal</p>
+            <div class="project-cta">Voir la galerie</div>
+          </div>
+        </article>
+
+        <!-- PROJET 5 -->
+        <article class="project-card" data-category="industriel"
+          data-title="Bureaux et Résidences aux almadies"
+          data-location="Dakar · Sénégal"
+          data-year="2008"
+          data-description="Bureaux et Résidences aux almadies."
+          data-images='[
+            "images/VUE CONIQUE GAUCHE IMM MALAMINE CADRE copie.jpg"
+          ]'>
+          <div class="project-media">
+            <img src="images/MIX BUREAUX ET RESIDENCES AU ALMADIES copie.jpg" alt="Bureaux et Résidences Almadies" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>Industriel</span><span>2014</span></div>
+            <h3>Bureaux et Résidences aux almadies</h3>
+            <p class="project-loc">Dakar · Sénégal</p>
+            <div class="project-cta">Voir la galerie</div>
+          </div>
+        </article>
+
+        <!-- PROJET 6 -->
+        <article class="project-card" data-category="residentiel"
+          data-title="Immeuble de residence à yoff"
+          data-location="Ville · Pays"
+          data-year="2025"
+          data-description="Immeuble de residence à yoff."
+          data-images='[
+            "images/IMMEUBLE DE RESIDENCES A YOFF CHEIKH MBACKE copie.jpg",
+            "images/projet-06-2.jpg",
+            "images/projet-06-3.jpg"
+          ]'>
+          <div class="project-media">
+            <img src="images/IMMEUBLE DE RESIDENCES A YOFF CHEIKH MBACKE copie.jpg" alt="Immeuble de residence à yoff" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>Résidentiel</span><span>2019</span></div>
+            <h3>Immeuble de résidence à yoff</h3>
+            <p class="project-loc">Ville · Pays</p>
+            <div class="project-cta">Voir la galerie</div>
+          </div>
+        </article>
+
+        <!-- PROJET 7 -->
+        <article class="project-card" data-category="commercial"
+          data-title="Nom du projet 7"
+          data-location="Ville · Pays"
+          data-year="2018"
+          data-description="Garden Spa à Ngor."
+          data-images='[
+            "images/GARDEN SPA A NGOR copie.jpg",
+            "images/projet-07-2.jpg",
+            "images/projet-07-3.jpg"
+          ]'>
+          <div class="project-media">
+            <img src="images/GARDEN SPA A NGOR copie.jpg" alt="Garden Spa à Ngor" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>Commercial</span><span>2018</span></div>
+            <h3>Garden Spa à Ngor</h3>
+            <p class="project-loc">Dakar · Sénégal</p>
+            <div class="project-cta">Voir la galerie</div>
+          </div>
+        </article>
+
+        <!-- PROJET 8 -->
+        <article class="project-card" data-category="institutionnel"
+          data-title="Institutions"
+          data-location="Ville · Pays"
+          data-year="2025"
+          data-description="Ajoutez ici la description complète du projet."
+          data-images='[
+            "images/konshens.png",
+            "images/projet-08-2.jpg",
+            "images/projet-08-3.jpg"
+          ]'>
+          <div class="project-media">
+            <img src="images/konshens.png" alt="Institutions" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>Institutionnel</span><span>2007</span></div>
+            <h3>Institutions</h3>
+            <p class="project-loc">Ville · Sénégal</p>
+            <div class="project-cta">Voir la galerie</div>
+          </div>
+        </article>
+
+        <!-- PROJET 9 -->
+        <article class="project-card" data-category="loisirs"
+          data-title="Nom du projet 9"
+          data-location="Ville · Pays"
+          data-year="2025"
+          data-description="Ajoutez ici la description complète du projet."
+          data-images='[
+            "images/VILLA MAGATTE DIAO the last.jpg"
+          
+          ]'>
+          <div class="project-media">
+            <img src="images/VILLA MAGATTE DIAO the last.jpg" alt="Immeuble" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>Loisirs</span><span>2025</span></div>
+            <h3>Immeuble</h3>
+            <p class="project-loc">Ville · Sénégak</p>
+            <div class="project-cta">Voir la galerie</div>
+          </div>
+        </article>
+
+        <!-- PROJET 10 -->
+        <article class="project-card" data-category="industriel"
+          data-title="Usines"
+          data-location="Ville · Pays"
+          data-year="2025"
+          data-description="Usines."
+          data-images='[
+            "images/Tambacounda.png",
+            "images/projet-10-2.jpg",
+            "images/projet-10-3.jpg"
+          ]'>
+          <div class="project-media">
+            <img src="images/Tambacounda.png" alt="Usines" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>Industriel</span><span>2015</span></div>
+            <h3>Nom du projet 10</h3>
+            <p class="project-loc">Tambacounda · Sénégal</p>
+            <div class="project-cta">Voir la galerie</div>
+          </div>
+        </article>
+
+        <!-- PROJET 11 -->
+        <article class="project-card" data-category="residentiel"
+          data-title="Nom du projet 11"
+          data-location="Ville · Pays"
+          data-year="2025"
+          data-description="Ajoutez ici la description complète du projet."
+          data-images='[
+            "images/02 IMM R+10 OPT VITRAGE VERT BRILLANT CONIQUE CADRE copie.jpg",
+            "images/projet-11-2.jpg",
+            "images/projet-11-3.jpg"
+          ]'>
+          <div class="project-media">
+            <img src="images/02 IMM R+10 OPT VITRAGE VERT BRILLANT CONIQUE CADRE copie.jpg" alt="Immeuble de résidences" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>Résidentiel</span><span>2020</span></div>
+            <h3>Immeuble de Résidence</h3>
+            <p class="project-loc">Ville · Sénégal</p>
+            <div class="project-cta">Voir la galerie</div>
+          </div>
+        </article>
+
+        <!-- PROJET 12 -->
+        <article class="project-card" data-category="institutionnel"
+          data-title="Nom du projet 12"
+          data-location="Ville · Pays"
+          data-year="2025"
+          data-description="Ajoutez ici la description complète du projet."
+          data-images='[
+            "images/AMPHITHEATRE copie.jpg",
+            "images/projet-12-2.jpg",
+            "images/projet-12-3.jpg"
+          ]'>
+          <div class="project-media">
+            <img src="images/AMPHITHEATRE copie.jpg" alt="Amphithétre" loading="lazy">
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>institutionnel</span><span>2011</span></div>
+            <h3>Amphitheatre</h3>
+            <p class="project-loc">Ville · Sénégal</p>
+            <div class="project-cta">Voir la galerie</div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX : ne pas supprimer -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Galerie du projet" aria-hidden="true">
+    <button class="lb-close" id="lb-close" aria-label="Fermer">&times;</button>
+    <button class="lb-nav lb-prev" id="lb-prev" aria-label="Image précédente">&larr;</button>
+    <button class="lb-nav lb-next" id="lb-next" aria-label="Image suivante">&rarr;</button>
+
+    <div class="lb-inner">
+      <figure>
+        <img id="lightbox-img" src="" alt="">
+      </figure>
+
+      <div class="lb-info">
+        <p class="lb-eyebrow" id="lb-meta"></p>
+        <h3 id="lb-title"></h3>
+        <p id="lb-description"></p>
+        <div class="lb-thumbs" id="lb-thumbs"></div>
+        <p class="lb-counter" id="lb-counter"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">CAC Consulting</div>
+    <ul class="footer-links">
+      <li><a href="projets (2).html">Projets</a></li>
+      <li><a href="services (1).html">Services</a></li>
+      <li><a href="contact (1).html">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 CAC Consulting — Tous droits réservés</p>
+  </footer>
+
+  <button id="topBtn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+
+  <script src="javascript (3).js"></script>
+</body>
+</html>
