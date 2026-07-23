@@ -7,6 +7,7 @@
   <title>CAC Consulting — Contact</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="page-contact">
@@ -86,11 +87,22 @@
           </div>
         </aside>
 
-        <form class="contact-form" action="mailto:cac.architecture@gmail.com" method="post" enctype="text/plain" novalidate>
+        <!-- ═══════════════════════════════════════════════════
+             FORMULAIRE — Formspree (gratuit, sans serveur)
+             Les messages arrivent directement dans :
+             cac.architecture@gmail.com
+        ════════════════════════════════════════════════════ -->
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xwvgrlnp"
+          method="POST"
+          id="contact-form"
+          novalidate
+        >
           <div class="form-row">
             <label>
               <span>Nom complet</span>
-              <input type="text" name="nom" required autocomplete="name">
+              <input type="text" name="nom" required autocomplete="name" placeholder="Votre nom">
             </label>
             <label>
               <span>Email</span>
@@ -100,24 +112,54 @@
 
           <label>
             <span>Téléphone</span>
-            <input type="tel" name="telephone" autocomplete="tel">
+            <input type="tel" name="telephone" autocomplete="tel" placeholder="+221 XX XXX XX XX">
           </label>
 
           <label>
             <span>Sujet</span>
-            <input type="text" name="sujet" required>
+            <input type="text" name="sujet" required placeholder="Type de projet, demande de devis...">
           </label>
 
           <label>
             <span>Message</span>
-            <textarea name="message" rows="6" required></textarea>
+            <textarea name="message" rows="6" required placeholder="Décrivez votre projet en quelques lignes..."></textarea>
           </label>
 
-          <button type="submit" class="btn-primary">
+          <!-- Message de confirmation (caché par défaut) -->
+          <div id="form-success" style="
+            display: none;
+            padding: 1.2rem 1.6rem;
+            background: rgba(201,168,76,0.12);
+            border: 1px solid rgba(201,168,76,0.4);
+            border-radius: 4px;
+            color: #c9a84c;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+          ">
+            ✅ Votre message a bien été envoyé ! Nous vous répondrons dans les plus brefs délais.
+          </div>
+
+          <div id="form-error" style="
+            display: none;
+            padding: 1.2rem 1.6rem;
+            background: rgba(192,57,43,0.12);
+            border: 1px solid rgba(192,57,43,0.4);
+            border-radius: 4px;
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+          ">
+            ❌ Une erreur est survenue. Veuillez réessayer ou nous contacter par email.
+          </div>
+
+          <button type="submit" class="btn-primary" id="submit-btn">
             <span>Envoyer le message</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
           </button>
         </form>
+
       </div>
     </div>
   </div>
@@ -135,5 +177,46 @@
   <button id="topBtn" title="Retour en haut" aria-label="Retour en haut">↑</button>
 
   <script src="javascript.js"></script>
+
+  <script>
+    // Gestion envoi formulaire Formspree (AJAX — sans rechargement de page)
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('form-success');
+    const errorMsg = document.getElementById('form-error');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Bouton en chargement
+      submitBtn.querySelector('span').textContent = 'Envoi en cours...';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          // Succès
+          successMsg.style.display = 'block';
+          errorMsg.style.display = 'none';
+          form.reset();
+          submitBtn.querySelector('span').textContent = 'Message envoyé ✓';
+        } else {
+          throw new Error('Erreur serveur');
+        }
+      } catch (err) {
+        // Erreur
+        errorMsg.style.display = 'block';
+        successMsg.style.display = 'none';
+        submitBtn.querySelector('span').textContent = 'Envoyer le message';
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+
 </body>
 </html>
