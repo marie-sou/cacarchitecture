@@ -918,3 +918,7 @@ footer {
   .lb-nav { width: 42px; height: 42px; }
   .lb-info h3 { font-size: 1.6rem; }
 }
+.stat-num {
+    font-size: 1.8rem; /* Ajuste la valeur selon tes préférences */
+    line-height: 1.2;
+}

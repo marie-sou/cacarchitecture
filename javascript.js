@@ -458,3 +458,28 @@
   });
 
 })();
+document.querySelectorAll(".stat-num[data-text]").forEach((el) => {
+    const text = el.dataset.text;
+    el.textContent = "";
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            let i = 0;
+
+            function typeWriter() {
+                if (i < text.length) {
+                    el.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 40); // vitesse de frappe
+                }
+            }
+
+            typeWriter();
+            observer.unobserve(el);
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(el);
+});
